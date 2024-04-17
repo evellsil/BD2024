@@ -1,0 +1,58 @@
+-- Criar banco de dados bd_sistema_bancario
+
+CREATE DATABASE bd_sistema_bancario;
+-----------------------------------------------
+-- Criar 5 tabelas quaiquer
+
+bd_sistema_bancario=# CREATE TABLE JOGO(PARTIDA TEXT);
+CREATE TABLE
+bd_sistema_bancario=# CREATE TABLE JOGADOR(JOGADOR TEXT);
+CREATE TABLE
+bd_sistema_bancario=# CREATE TABLE PLACAR(PONTT1 INTEGER);
+CREATE TABLE
+bd_sistema_bancario=# CREATE TABLE APOSTA(APOSTA TEXT);
+CREATE TABLE
+bd_sistema_bancario=# CREATE TABLE NIVEL(CENARIO TEXT);
+CREATE TABLE
+
+-----------------------------------------------
+
+ Criar tabelas conforme MER (Sistema Bancario):
+
+CREATE TABLE cliente(NOME_CLIENTE VARCHAR, CIDADE_CLIENTE VARCHAR, ENDERECO_CLIENTE VARCHAR);
+
+CREATE TABLE CONTA(NUMERO_CONTA INTEGER, NOME_AGENCIA VARCHAR, SALDO INTEGER);
+
+CREATE TABLE emprestimo(NUMERO_EMPRESTIMO INTEGER, NOME_AGENCIA VARCHAR, VALOR INTEGER);
+
+CREATE TABLE AGENCIA(NOME_AGENCIA VARCHAR, CIDADE_AGENCIA VARCHAR, DEPOSITOS VARCHAR);
+---------------------------------------------------------------------------------------------
+
+-- Deletar as 5 tabelas criadas aleatoriamente
+
+
+DROP TABLE JOGO;
+DROP TABLE JOGADOR;
+DROP TABLE PLACAR;
+DROP TABLE APOSTA;
+DROP TABLE NIVEL;
+
+----------------------------------------------------------------------
+
+-- alterar as tabelas conforme o MER atualizado
+
+ALTERANDO NOME:
+ALTER TABLE cliente RENAME TO tbl_cliente;
+ALTER TABLE conta RENAME TO tbl_conta;
+ALTER TABLE emprestimo RENAME TO tbl_emprestimo;
+ALTER TABLE agencia RENAME TO tbl_agencia;
+
+ALTERANDO COLUNAS:
+
+ALTER TABLE tbl_agencia RENAME COLUMN cidade_agencia TO endereco_agencia;
+ALTER TABLE tbl_cliente ADD COLUMN idade integer;
+ALTER TABLE tbl_cliente ADD COLUMN cpf varchar;
+
+-- Criar um esquema com o seu nome
+
+CREATE SCHEMA EVELLIN.

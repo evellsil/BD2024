@@ -1,0 +1,11 @@
+//exercicios aula6;
+
+--select t.titulo,l.status from tbl_titulo t left join tbl_livros l on t.codigo_titulo = l.codigo_titulo;
+
+--select t.titulo,t.descricao,l.status from tbl_titulo t inner join tbl_livros l on t.codigo_titulo = l.codigo_titulo where status = 'ALUGADO';
+
+--select t.titulo,t.descricao,l.status from tbl_titulo t inner join tbl_livros l on t.codigo_titulo = l.codigo_titulo where status = 'DISPONIVEL';
+
+--select t.titulo,t.categoria,l.status from tbl_titulo t inner join tbl_livros l on t.codigo_titulo = l.codigo_titulo where status = 'DISPONIVEL';
+
+--select c.nome,t.titulo,t.descricao,l.status from tbl_cliente c join tbl_emprestimo e on e.codigo_cliente = c.codigo_cliente join tbl_livros l on e.codigo_livro = l.cod_livro join tbl_titulo t on l.codigo_titulo = t.codigo_titulo where l.status = 'ALUGADO' and c.nome = 'Ana Oliveira';

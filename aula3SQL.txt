@@ -1,0 +1,13 @@
+postgres=# \c bd_aula03;
+bd_aula03=# create domain cstatus text check(value in('disponivel','alugado'));
+CREATE DOMAIN
+bd_aula03=# create domain ccategoria text check(value in('drama','comedia'));
+CREATE DOMAIN
+bd_aula03=# create table tbl_cliente(codigo_cliente integer primary key,nome text not null, cidade text,endereco text);
+CREATE TABLE
+bd_aula03=# create table tbl_titulo(codigo_titulo integer primary key,titulo text not null,descricao text,categoria ccategoria);
+CREATE TABLE
+bd_aula03=# create table tbl_livros(cod_livros integer primary key,codigo_titulo integer references tbl_titulo(codigo_titulo),status cstatus default 'disponivel');
+CREATE TABLE
+bd_aula03=# create table tbl_empresitmo(numero_emprestimo integer primary key,codigo_cliente integer references tbl_cliente(codigo_cliente),codigo_livro integer references tbl_livros(cod_livros));
+CREATE TABLE

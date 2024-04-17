@@ -1,0 +1,67 @@
+//insert na tabela cliente;
+
+bd_aula04=# insert into tbl_cliente(codigo_cliente,nome,cidade,endereco) values(1,'Joao Silva','Sao Paulo','Rua A 123'),
+(2,'Maria Santos','Rio de Janeiro','Av. B,456'),
+(3,'Pedro Almeida','Belo Horizonte','Rua C,789'),
+(4,'Ana Oliveira','Salvador',Av. D, 1011),
+(5,'Carlos Lima','Brasilia','Rua E,1213');
+INSERT 0 5
+
+//insert na tabela titulo;
+
+bd_aula04=# insert into tbl_titulo(codigo_titulo,titulo,descricao,categoria)values(1,'Aventuras Urbanas','Uma historia emociante','DRAMA'),
+(2,'Misterios Antigos','Enigmas por resolver','COMEDIA'),
+(3,'Amor nas estrelas','Um romance intergalactico','DRAMA'),
+(4,'Codigo enigmatico','Segredos ocultos','COMEDIA'),
+(5,'Historias perdidas','Contos esquecidos','DRAMA');
+INSERT 0 5
+
+//insert na tabela livros;
+
+bd_aula04=# insert into tbl_livros(cod_livro,codigo_titulo,status)values(1,1,'DISPONIVEL'),
+(2,1,'ALUGADO'),
+(3,2,'DISPONIVEL'),
+(4,3,'ALUGADO'),
+(5,4,'DISPONIVEL');
+INSERT 0 5
+
+//insert na tabela emprestimo
+
+bd_aula04=# insert into tbl_emprestimo(numero_emprestimo,codigo_cliente,codigo_livro)values(1,1,2),
+(2,2,4),
+(3,3,1),
+(4,4,5),
+(5,5,3);
+INSERT 0 5
+
+//selecionando tudo da tabela clientes;
+
+bd_aula04=# select * from tbl_cliente;
+
+//selecionando na tabela clientes onde a cidade é Sao Paulo;
+
+bd_aula04=# select * from tbl_cliente where cidade = 'Sao Paulo';
+
+//selecionando na tabela clientes onde o codigo do cliente é maior que 3;
+
+bd_aula04=# select * from tbl_cliente where codigo_cliente > 3;
+
+//selecionando tudo da tabela titulo;
+
+bd_aula04=# select * from tbl_titulo;
+
+//criando a tabela tbl_cliente2 com uma coluna chamada codigo do tipo inteiro;
+
+bd_aula04=# create table tbl_cliente2(codigo integer);
+
+//inserindo dentro da coluna codigo da tabela tbl_cliente2 os mesmos dados da coluna codigo_cliente da tabela tbl_cliente;
+
+bd_aula04=# insert into tbl_cliente2(codigo) select codigo_cliente from tbl_cliente;
+
+//atualizando a coluna status da tabela tbl_livros e colocando todos os livros que antes estavam alugado para disponivel;
+
+bd_aula04=# update tbl_livros set status = 'DISPONIVEL' where status = 'ALUGADO';
+
+//excluindo todos os valores da coluna codigo da tabela tbl_cliente2 onde o codigo tem um numero maior que 3;
+
+bd_aula04=# delete from tbl_cliente2 where codigo > 3;
